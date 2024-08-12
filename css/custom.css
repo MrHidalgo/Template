@@ -1,0 +1,528 @@
+#text-cta {
+	display: none;
+}
+
+.bc {
+	line-height: 0.5rem !important;
+}
+
+.phone, .phone a {
+	padding-right: 35px;
+	line-height: normal !important;
+}
+
+.phone span {
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	color: #555;
+	letter-spacing: 0.09rem;
+}
+
+.plr-4 {
+	padding: 0 4rem;
+}
+
+#phone_numbers {
+	margin-top: 0 !important;
+}
+
+#phone_numbers li {
+	border-top: 1px solid #555;
+}
+
+#phone_numbers a {
+	background: #222;
+	padding: 24px 0;
+}
+
+.image-with-logo {
+	position: relative;
+}
+
+.image-with-logo:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-image: url('/wp-content/uploads/2023/09/logo-icon-white.png');
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	top: 12%;
+	background-repeat: no-repeat;
+	left: 4.5%;
+	background-size: 15%;
+}
+
+.inner .banner__content .width-1128 {
+	margin-left: 15%;
+}
+
+.inner .section__banner--block h1 span, .inner .section__banner--block .bc {
+	text-align: left;
+	justify-content: flex-start;
+	letter-spacing: .03em;
+}
+
+.btn-center {
+	margin: 0 auto;
+}
+
+.blog_item .postTime {
+	display: block;
+	font-size: 0.9rem;
+	color: #aaa;
+}
+
+.memberships_inner .section__partners {
+	margin: 0 !important;
+}
+
+.section__dental__inner .right {
+	background-color: #c5debd;
+	margin: 10% 0 -10%;
+	position: relative;
+	outline: 1px solid #fff;
+	outline-offset: -30px;
+	color: #687165;
+}
+
+.scrolled .mid .logo {
+	max-width: 70px !important;
+}
+
+.scrolled .header .header__content, .inverted-header .header .header__content {
+	background-color: hsla(0, 0%, 100%, 1);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scrolled .header .logo img, .inverted-header .header .logo img {
+	filter: invert(1) opacity(0.75);
+	transition: all 0.35s ease-in-out;
+}
+
+.scrolled .header .header__content--column div.right ul li a, .inverted-header .header .header__content--column div.right ul li a {
+	color: #000000;
+}
+
+.scrolled .menu-toggle span, .inverted-header .menu-toggle span {
+	color: #000000;
+}
+
+.scrolled .menu-toggle svg rect, .inverted-header .menu-toggle svg rect {
+	fill: #000000;
+}
+
+.btn.outline {
+	background: none;
+	border: 1px solid #000;
+}
+
+.btn.outline:hover {
+	background-color: #000;
+	border: 1px solid #000;
+}
+
+.green-box {
+	background-color: #c5debd;
+	position: relative;
+	outline: 1px solid #fff;
+	outline-offset: -30px;
+	color: #687165;
+}
+
+@media screen and (max-width: 1023px) {
+	.plr-4 {
+		padding: 0 2rem;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#text-cta {
+		display: block;
+		position: fixed;
+		bottom: 60px;
+		right: 15px;
+		background: #272982;
+		padding: 14px 20px;
+		color: #fff;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		font-size: 15px;
+		border-radius: 55px;
+		align-items: center;
+		column-gap: 7px;
+		z-index: 10;
+	}
+	
+	#text-cta svg {
+		fill: #fff;
+		width: 20px;
+		height: auto;
+	}
+	
+	body .uwy.userway_p5 .uai {
+		bottom: 55px !important;
+	}
+	
+	.menu-mobile-cta ul li {
+		line-height: normal !important;
+	}
+	
+	.section__dental__inner .right {
+		margin: 0;
+		border: none;
+		outline: none;
+		outline-offset: 0;
+		padding-top: 3rem !important;
+	}
+	
+	.rellax {
+		transform: translate3d(0, 0, 0) !important;
+	}
+	
+	footer {
+		font-size: 1rem;
+	}
+	
+	.memberships_inner .section__partners {
+		margin-top: 2rem !important;
+	}
+	
+	.inner .banner__content .width-1128 {
+		margin: 100px auto 0;
+	}
+	
+	.inner .section__banner--block h1 span, .inner .section__banner--block .bc, .section__banner--block h1 {
+		text-align: center;
+		justify-content: center;
+	}
+	
+	.green-box {
+		outline: none;
+		outline-offset: 0;
+	}
+}
+
+
+/* NEW STYLE
+===================
+===================
+===================
+*/
+.typography-body, body, button, input, select, textarea, p, span, a {
+	font-family: 'proxima-nova', sans-serif;
+	letter-spacing: .03em;
+	line-height: 1.5;
+}
+
+.section__banner--block .hero-text-wrap p {
+	max-width: 654px;
+	margin-bottom: 0;
+}
+
+.section__banner--block .video-fg .btn,
+.section__banner--block .video-fg .btn-wrap {
+	margin-top: 40px;
+}
+
+.banner__logo {
+	z-index: 999;
+	position: absolute;
+	right: 75px;
+	bottom: 50px;
+}
+
+.banner__logo img {
+	width: auto;
+}
+
+.section__banner--block .hero-text-wrap .hero-title {
+	font-family: 'dovetail-mvb', 'proxima-nova', sans-serif;
+	font-weight: 300;
+	padding-bottom: 83px;
+	letter-spacing: .03em;
+}
+
+.inverted a.btn,
+.inverted a.button-icon,
+a.btn.inverted,
+a.button-icon.inverted {
+	background-color: #b1e4e8;
+	color: #415556;
+}
+
+.section__banner--block .hero-text-wrap .hero-title:after {
+	bottom: 1.5rem;
+}
+
+.section__welcome .right h2 {
+	font-family:"dovetail-mvb";
+	font-weight: 300;
+	letter-spacing: .03em;
+}
+
+.section__welcome {
+	position: relative;
+}
+
+.section__welcome:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	/*max-height: 720px;*/
+	width: 100px;
+	background-color: #476a86;
+}
+
+.section__welcome .right h2 {
+	white-space: nowrap;
+	font-size: 3.5rem;
+	padding: 1.5rem 3.5rem;
+	letter-spacing: .03em;
+}
+
+.section__welcome .right .subtitle {
+	font-family:"dovetail-mvb";
+	font-weight: 400;
+	color: #6f6e6d;
+}
+
+.btn, .button-icon {
+	background-color: #b1e4e8;
+	color: #415556;
+}
+
+.section__welcome .btn {
+	position: relative;
+	font-weight: 700;
+	background-color: transparent;
+}
+
+.section__welcome .btn:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 35%;
+	height: 100%;
+	background-color: #b1e4e8;
+	z-index: -1;
+	transition: all 0.3s ease;
+}
+
+.section__welcome .btn:hover:before {
+	width: 100%;
+	transition: all 0.3s ease;
+}
+
+.section__insurance {
+	padding-top: 75px;
+	padding-bottom: 75px;
+	background-color: #e4e3e1;
+}
+
+.section__insurance h2 {
+	font-family: "dovetail-mvb";
+	font-weight: 300;
+	font-size: 2.125rem;
+	line-height: 3rem;
+	letter-spacing: .03em;
+}
+
+.section__insurance img {
+	object-fit: unset;
+	width: auto;
+}
+
+.section__insurance a {
+	color: inherit;
+	font-weight: bold;
+}
+
+.section__dental .grid-3-col .service h3 {
+	bottom: 100px;
+	font-family: "dovetail-mvb";
+	font-weight: 300;
+	letter-spacing: .03em;
+}
+
+.section__dental-link {
+	justify-content: center;
+}
+
+.section__dental-link a {
+	display: flex;
+	text-transform: uppercase;
+	color: #232f3f;
+	text-decoration: underline;
+}
+
+.section__blocks h2 {
+	font-family: "dovetail-mvb";
+	font-weight: 300;
+	letter-spacing: .03em;
+}
+
+.section__dental .grid-3-col .service {
+	overflow: unset;
+}
+
+.section__dental .grid-3-col .service:hover h3 {
+	bottom: 65px;
+	letter-spacing: .03em;
+}
+
+.section__dental .grid-3-col .service .relative {
+	overflow: hidden;
+}
+
+.section__dental .service p {
+	z-index: 10;
+	position: absolute;
+	bottom: -55px;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 105px;
+	height: 105px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+	background-color: #ffffff;
+}
+
+.section__dental .service p img {
+	width: auto;
+	transform: scale(1) !important;
+}
+
+.section__about-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 100% !important;
+}
+
+.section__about-bg img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.section__about-wrapper {
+	z-index: 5;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.section__about-visual {
+	position: relative;
+	max-width: 710px;
+	max-height: 750px;
+}
+
+.section__about-visual:before {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	top: -50px;
+	right: -10px;
+	width: 200px;
+	height: 200px;
+	background-color: #b1e4e8;
+}
+
+.with-line h1 span, .with-line h2 span {
+	color: #b1e4e8;
+	letter-spacing: .03em;
+	letter-spacing: .03em;
+}
+
+.box-align-vertically {
+	padding-right: 50px;
+}
+
+.inverted .btn.outline, .button-icon.outline {
+	color: #ffffff;
+}
+
+.section__ratings .swiper-button-prev {
+	transform: none;
+}
+
+.section__ratings .swiper-button-next, .section__ratings .swiper-button-prev {
+	border-color: #00ffff;
+}
+
+.section__ratings .swiper-slide {
+	font-family: "dovetail-mvb";
+	font-weight: 300;
+}
+
+.header__content--logo {
+	display: block !important;
+}
+
+.header__content--logo img {
+	/*width: auto;*/
+	max-width: 150px;
+}
+
+.header .header__content {
+	background-color: transparent;
+}
+
+.header a:not(.header__skip) {
+	font-weight: 400;
+}
+
+.header .header__content--column div.right ul li a {
+	background-color: transparent;
+	border-color: #b1e4e8;
+}
+
+.menu-toggle {
+	top: 57px;
+}
+
+.section__banner--block .video-fg {
+	background: rgba(0,0,0,.4);
+}
+
+.scrolled .header .header__content {
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}
+
+.scrolled #menu-trigger {
+	top: 43px;
+}
+
+.scrolled .header .logo img, .inverted-header .header .logo img {
+	transform: scale(0.85);
+}
+
+.scrolled .phone a {
+	color: #6f6e6d;
+}
+
+.section__welcome .left {
+	position: relative;
+	display: flex;
+}
+
+.btn-wrap .btn {
+	font-weight: 700;
+}
