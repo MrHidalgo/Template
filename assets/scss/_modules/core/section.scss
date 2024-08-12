@@ -1,0 +1,11 @@
+.section {
+  width: 100%;
+
+  & > * {
+    margin: auto;
+  }
+
+  & > :not([class^="width-"]):not([class*=' width-']) {
+    max-width: 1640px;
+  }
+}

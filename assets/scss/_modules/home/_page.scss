@@ -1,0 +1,17 @@
+// section body page theme
+
+body {
+  &.home {
+    .section__banner {
+      height: calc(100vh - 0px);
+      max-height: inherit;
+    }
+  }
+  main {
+    //padding-top: 80px;
+    //overflow: hidden;
+    @include media-mobile-only {
+      //padding-top: 60px;
+    }
+  }
+}

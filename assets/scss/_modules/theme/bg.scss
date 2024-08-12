@@ -1,0 +1,47 @@
+/* bg module: theme */
+
+.relative {
+  position: relative;
+}
+.bg-gray {
+  background-color: $bg-gray;
+}
+.bg-white {
+  background-color: $color-white;
+}
+.bg-green {
+  background-color: $color-accent;
+}
+
+.box {
+  &-align {
+    &-vertically {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+    &-height {
+      height: auto;
+    }
+  }
+}
+
+.bar {
+  background-color: $color-black;
+  width: 60%;
+  height: 2px;
+  display: inline-block;
+  margin: 15px auto 30px;
+}
+
+.border {
+  &-tr {
+    box-shadow: 10px -10px 0 10px $color-black;
+    border: 2px solid $color-black;
+  }
+  &-bl {
+    box-shadow: -10px 10px 0 10px $color-black;
+    border: 2px solid $color-black;
+  }
+}

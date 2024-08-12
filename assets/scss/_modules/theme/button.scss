@@ -1,0 +1,195 @@
+/* button module: core */
+// TODO: make more logical separation between core and theme styles
+
+// button,
+// input[type="button"],
+// input[type="submit"] {
+//   background-color: transparent;
+// }
+
+.btn,
+.button-icon {
+  background-color: $color-accent;
+  width: max-content;
+  display: flex;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden; // clip box for sliding background
+  padding: 9*$pxToRem 36*$pxToRem!important;
+  min-height: 36*$pxToRem;
+  //min-width: 120px;
+  //padding-bottom: 7px;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  font-size: $font-size-body-sm;
+  font-weight: 500;
+  color: $color-white;
+  //border-radius: 10px;
+  //border: 1px solid $color-gray-1;
+  transition: all $transition-default;
+  //@include media-mobile-only {
+  //  min-height: auto;
+  //}
+  &:hover {
+    background-color: $color-blue;
+    color: $color-white!important;
+    border-color: $color-accent;
+  }
+    &.outline{
+        background: none!important;
+        border: 1px solid $color-white!important;
+        &:hover{
+            background-color: $color-white!important;
+            color: $color-blue!important;
+        }
+        &:hover:after{
+            background-color: $color-blue!important;
+            background-image: none;
+        }
+    }    
+    &.with-arrow{
+              position: relative;
+              padding-right: 3.5rem !important;
+              &:after{
+                  content:'';
+                  position: absolute;
+                  right: 18px;
+                  top:0;
+                  bottom: 0;
+                  z-index: 10;
+                  margin: auto 0;
+                  width: 25px;
+                  height: 14px;
+                  --svg: url('/wp-content/themes/omatix/images/arrow-right-white.svg');
+                  background-image: var(--svg);
+                  -webkit-mask: var(--svg);
+                  mask: var(--svg);
+                  background-color: $color-white; 
+                  transition: all 0.3s ease-in-out;
+              }
+              &:hover:after{
+                transform: rotate(90deg);
+              }
+    }    
+}
+
+.button {
+  // Plus sign preceding button text
+  //&::before {
+  //  content: "+";
+  //  padding-right: 4*$pxToRem;
+  //}
+}
+
+.padding-section-content .button:last-child {
+  @include media-mobile-only {
+    margin-bottom: $padding-mobile;
+  }
+}
+
+.button-icon {
+  svg {
+    display: block;
+    width: 16*$pxToRem;
+    height: 16*$pxToRem;
+    margin-right: 10*$pxToRem;
+  }
+}
+
+.inverted a.btn,
+.inverted a.button-icon,
+a.btn.inverted,
+a.button-icon.inverted {
+  background-color: $color-accent;
+  color: $color-white;
+  transition: all $transition-default;
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
+}
+
+a.svg, .svg {
+  position: relative;
+  &.inverted {
+    svg {
+      stroke: $color-white;
+    }
+  }
+  svg {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    fill: none;
+    stroke: $color-gray-11;
+    stroke-width: 0.5px;
+    margin: 0 auto;
+    transform: translateX(-50%);
+    path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      transition: stroke-dashoffset 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+
+    }
+  }
+  &:hover {
+    svg {
+      path {
+        stroke-dashoffset: 0;
+        transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+        transition-duration: 0.4s;
+      }
+    }
+  }
+}
+
+.big-button {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid $color-black;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+  margin-bottom: 0;
+  overflow: hidden;
+  position: relative;
+  transition: all $transition-default;
+  svg {
+    fill: $color-black;
+    transition: all $transition-default;
+  }
+  &:hover {
+    //background-color: $color-accent;
+    //border-color: $color-accent;
+    svg {
+      fill: $color-white;
+    }
+    &:after {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 50%;
+    background-color: $color-accent;
+    transition: all 0.4s ease-in;
+  }
+}

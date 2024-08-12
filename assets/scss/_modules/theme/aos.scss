@@ -1,0 +1,90 @@
+// animation settings
+$animation-duration: 0.9s;
+$animation-shift: 40px; // distance from start to end points
+
+// slide-up transition
+$animation-transform:
+    $animation-duration
+    cubic-bezier(0.000, 1.100, 0.985, 0.985); // timing function
+
+[data-aos="fade-in-btm"] {
+  opacity: 0;
+  transition: opacity $animation-duration, transform $animation-transform;
+  transform: translateY($aos-slide-distance);
+}
+
+.js-intersection-observed[data-aos="fade-in-btm"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos="fade-in"] {
+  opacity: 0;
+  transition: opacity $animation-duration, transform $animation-transform;
+}
+
+.js-intersection-observed[data-aos="fade-in"] {
+  opacity: 1;
+}
+
+[data-aos="fade-down"] {
+  opacity: 0;
+  transition: opacity $animation-duration, transform $animation-transform;
+  transform: translateY(-$animation-shift);
+}
+
+.js-intersection-observed[data-aos="fade-down"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos="fade-left"] {
+  opacity: 0;
+  transition: opacity $animation-duration, transform $animation-transform;
+  transform: translateX(-$animation-shift);
+
+  @include media-mobile-only {
+    transform: unset;
+    transform: translateY($animation-shift);
+  }
+}
+
+.js-intersection-observed[data-aos="fade-left"] {
+  opacity: 1;
+  transform: translateX(0);
+
+  @include media-mobile-only {
+    transform: translateY(0);
+  }
+}
+
+[data-aos="fade-right"] {
+  opacity: 0;
+  transition: opacity $animation-duration, transform $animation-transform;
+  transform: translateX($animation-shift);
+
+  @include media-mobile-only {
+    transform: unset;
+    transform: translateY($animation-shift);
+  }
+}
+
+.js-intersection-observed[data-aos="fade-right"] {
+  opacity: 1;
+  transform: translateY(0);
+
+  @include media-mobile-only {
+    transform: translateY(0);
+  }
+}
+
+// Delay
+@for $i from 1 through 30 {
+  [data-animation-delay='#{$i * 100}'] {
+    transition-delay: 0s;
+  }
+
+  .js-intersection-observed[data-animation-delay='#{$i * 100}'] {
+    transition-delay: #{$i * 100}ms;
+  }
+}

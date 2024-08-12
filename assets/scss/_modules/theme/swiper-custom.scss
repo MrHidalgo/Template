@@ -1,0 +1,108 @@
+/**
+ * Swiper 8.3.2
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2022 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: July 26,  2022
+ */
+
+.swiper-slide,.swiper-wrapper{position:relative;height:100%;width:100%}.swiper-android .swiper-slide,.swiper-pagination,.swiper-wrapper{transform:translate3d(0,0,0)}.swiper{margin-left:auto;margin-right:auto;position:relative;overflow:hidden;list-style:none;padding:0;z-index:1}.swiper-wrapper{z-index:1;display:flex;box-sizing:content-box}.swiper-pointer-events{touch-action:pan-y}.swiper-slide{flex-shrink:0}.swiper-slide-invisible-blank{visibility:hidden}.swiper-autoheight,.swiper-autoheight .swiper-slide{height:auto}.swiper-autoheight .swiper-wrapper{align-items:flex-start;transition-property:transform,height}.swiper-backface-hidden .swiper-slide{transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}.swiper-css-mode>.swiper-wrapper{overflow:auto;scrollbar-width:none;-ms-overflow-style:none}.swiper-css-mode>.swiper-wrapper::-webkit-scrollbar{display:none}.swiper-css-mode>.swiper-wrapper>.swiper-slide{scroll-snap-align:start start}.swiper-horizontal.swiper-css-mode>.swiper-wrapper{scroll-snap-type:x mandatory}.swiper-centered>.swiper-wrapper::before{content:'';flex-shrink:0;order:9999}.swiper-centered.swiper-horizontal>.swiper-wrapper>.swiper-slide:first-child{margin-inline-start:var(--swiper-centered-offset-before)}.swiper-centered.swiper-horizontal>.swiper-wrapper::before{height:100%;min-height:1px;width:var(--swiper-centered-offset-after)}.swiper-centered>.swiper-wrapper>.swiper-slide{scroll-snap-align:center center}.swiper-button-next,.swiper-button-prev{position:absolute;cursor:pointer;display:flex;align-items:center;justify-content:center}.swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled{opacity:.35;cursor:auto;pointer-events:none}.swiper-button-next.swiper-button-hidden,.swiper-button-prev.swiper-button-hidden{opacity:0;cursor:auto;pointer-events:none}.swiper-navigation-disabled .swiper-button-next,.swiper-navigation-disabled .swiper-button-prev,.swiper-pagination-bullet:only-child,.swiper-pagination-disabled>.swiper-pagination,.swiper-pagination.swiper-pagination-disabled{display:none!important}.swiper-button-prev,.swiper-rtl .swiper-button-next{right:auto}.swiper-button-next,.swiper-rtl .swiper-button-prev{left:auto}.swiper-button-lock,.swiper-pagination-lock{display:none}.swiper-pagination{position:absolute;text-align:center}.swiper-pagination.swiper-pagination-hidden{opacity:0}.swiper-horizontal>.swiper-pagination-bullets,.swiper-pagination-bullets.swiper-pagination-horizontal,.swiper-pagination-custom,.swiper-pagination-fraction{left:0;width:100%}.swiper-pagination-bullet{display:inline-block}button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-webkit-appearance:none;appearance:none}.swiper-pagination-clickable .swiper-pagination-bullet{cursor:pointer}.swiper .swiper-notification{position:absolute;left:0;top:0;pointer-events:none;opacity:0;z-index:-1000}
+
+// Custom Swiper extension: 
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  cursor: default;
+
+  &:active {
+    cursor: grab;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 68*$pxToRem;  
+  z-index: 7;
+  padding: 0;
+  padding: 20*$pxToRem;
+  background: transparent;
+
+  svg {
+    display: block;
+    width: 20*$pxToRem;
+    height: 36*$pxToRem;
+    fill: $color-gray-5;
+    transition: fill $transition-default;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      fill: $color-text;
+    }
+  }
+
+  @include media-below-desktop {
+    display: none;
+  }
+}
+
+.swiper-button-prev svg {
+  transform: rotate(180deg);
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: 120*$pxToRem;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: 120*$pxToRem;
+}
+
+.swiper-pagination {
+  transition: opacity $transition-default;
+  z-index: 7;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 23*$pxToRem;
+}
+
+.swiper-pagination-bullet {
+  padding: 6*$pxToRem;
+  margin: 4*$pxToRem;
+
+  &:before {
+    display: block;
+    content: '';
+    width: 9*$pxToRem;
+    height: 9*$pxToRem;
+    border: 1*$pxToRem solid $color-gray-5;
+    border-radius: 100%;
+    transition: background-color $transition-default,
+                border-color $transition-default;
+  }
+
+  &:hover:not(.swiper-pagination-bullet-active):before {
+    background: $color-gray-8;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  &:before {
+    background: $color-accent;
+    border-color: $color-accent;
+  }
+}

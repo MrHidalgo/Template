@@ -1,0 +1,48 @@
+// section types theme
+
+.section__types {
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include media-below-desktop {
+    margin-bottom: 6rem;
+  }
+  .grid-3-col {
+    grid-gap: 60px;
+    @include media-below-desktop {
+      grid-template-columns: 1fr;
+      grid-gap: 100px;
+    }
+    .bg-cover-photo {
+      padding: 1rem;
+      height: 100%;
+      .box {
+        background-color: $color-white;
+        height: 78%;
+        padding: 3.2rem 2rem;
+        border: 1px solid $color-black;
+        @include media-below-desktop {
+          height: auto;
+        }
+        .title {
+          font-size: 16*$pxToRem;
+          text-transform: uppercase;
+        }
+      }
+      .img {
+        position: relative;
+        img {
+          border: 3px solid $color-accent;
+          max-width: 150px;
+          position: absolute;
+          right: 20px;
+          bottom: -5rem;
+          @include media-below-desktop {
+            bottom: -6rem;
+            max-width: 120px;  
+          }
+        }
+      }
+    }
+  }
+}

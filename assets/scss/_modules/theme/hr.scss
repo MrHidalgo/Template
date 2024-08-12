@@ -1,0 +1,143 @@
+// Default stylized <hr>
+hr,
+.hr,
+.hr-short {
+  position: relative;
+  border: none;
+  overflow: visible;
+  height: 23*$pxToRem;
+  background: url(getHrBgImageData('black')) 92*$pxToRem center / #{30*$pxToRem} #{30*$pxToRem} no-repeat;
+  opacity: 0.33;
+  margin-top: 36*$pxToRem;
+  margin-bottom: 36*$pxToRem;
+
+  &:before,
+  &:after {
+    display: block;
+    position: absolute;
+    background: $color-black;
+    height: 1*$pxToRem;
+    content: "";
+    top: 11*$pxToRem;
+  }
+
+  &:before {
+    width: 100*$pxToRem;
+    left: 0;
+  }
+
+  &:after {
+    width: calc(100% - #{113*$pxToRem});
+    right: 0;
+  }
+}
+
+nav hr,
+nav .hr,
+.banner hr,
+.banner .hr,
+.quote hr,
+.quote .hr,
+.hr--short {
+  max-width: 610*$pxToRem;
+  background-position: 26*$pxToRem center;
+
+  &:before {
+    width: 34*$pxToRem;
+  }
+
+  &:after {
+    width: calc(100% - #{47*$pxToRem});
+  }
+}
+
+.hr-initials {
+  position: relative;
+  width: 100%;
+  height: 52*$pxToRem;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1*$pxToRem;
+    width: calc(50% - #{76*$pxToRem});
+    background: $color-black;
+    top: 50%;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  svg {
+    width: 58*$pxToRem;
+    height: 52*$pxToRem;
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  & + h2 {
+    margin-top: $content-spacing*$pxToRem;
+  }
+}
+
+.inverted .hr-initials,
+.hr-initials.inverted {
+  &::before,
+  &::after {
+    background: rgba($color-white, 0.3);
+  }
+
+  svg {
+    fill: $color-white;
+  }
+}
+
+// Horizontally-flipped <hr>
+nav {
+  hr,
+  .hr {
+    &:last-of-type:not(:first-child) {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+nav hr:last-of-type:not(:first-child),
+nav .hr:last-child,
+hr.hr--flipped,
+.hr.hr--flipped {
+  transform: rotate(180deg);
+}
+
+// Inverted <hr> in white
+hr.inverted,
+.hr.inverted,
+.inverted hr,
+.inverted .hr,
+.banner hr,
+.banner .hr {
+  opacity: 1;
+  background-image: url(getHrBgImageData('white'));
+  &:before,
+  &:after {
+    background: $color-white;
+  }
+}
+
+.inverted .hr--faded {
+  background-image: url(getHrBgImageData('rgba(255,255,255,0.3)'));
+  &:before,
+  &:after {
+    background: rgba(255,255,255,0.3);
+  }
+}

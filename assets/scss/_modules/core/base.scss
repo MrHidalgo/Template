@@ -1,0 +1,121 @@
+/* base module: core */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: $color-page-bg;
+}
+
+html {
+  font-size: $pageZoom;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+figure {
+  margin: 0;
+}
+
+header,
+section,
+footer {
+  position: relative;
+}
+
+a {
+  color: $color-link;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color $transition-default;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center center;
+}
+
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+a,
+img,
+code,
+pre,
+table,
+blockquote,
+table,
+dl {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+  display: block;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+// Accessible and nice-looking focus outline
+// From: https://css-tricks.com/standardizing-focus-styles-with-css-custom-properties/
+$outline-size: 2*$pxToRem;
+$outline-style: solid;
+$outline-color: $color-text;
+$outline-offset: 2*$pxToRem;
+
+:is(a, button, input, textarea, select, [role="button"]) {
+  &:focus,
+  &:focus-visible {
+    outline: $outline-size $outline-style $outline-color;
+    outline-offset: $outline-offset;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+.header,
+.banner,
+.inverted {
+  :is(a, button, input, textarea, select, [role="button"]) {
+    &:focus,
+    &:focus-visible {
+      outline-color: $color-text-inverted;
+    }
+  }
+}
+
+address {
+  font-style: normal;
+}

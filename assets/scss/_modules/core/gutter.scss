@@ -1,0 +1,42 @@
+/* gap module: core */
+
+@mixin gap16 {
+  gap: 16*$pxToRem;
+}
+
+@mixin gap24 {
+  gap: 24*$pxToRem;
+}
+
+@mixin gap30 {
+  gap: 30*$pxToRem;
+}
+
+.gutter-16 {
+  @include gap16;
+}
+
+.gutter-sm,
+.gutter-24 {
+  @include gap24;
+}
+
+.gutter-30 {
+  @include gap30;
+}
+
+.gutter-sm,
+.gutter-24,
+.gutter-30 {
+  @include media-mobile-only {
+    @include gap16;
+  }
+}
+
+.gutter-col-width {
+  gap: $padding-default*$pxToVw;
+
+  @include media-lg-monitor-only {
+    gap: $padding-default*$pxToRem;
+  }
+}

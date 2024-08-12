@@ -1,0 +1,40 @@
+.width-640 {
+  max-width: 640*$pxToRem;
+}
+
+.width-674 {
+  max-width: 674*$pxToRem;
+}
+
+.width-812 {
+  max-width: 812*$pxToRem;
+}
+
+.width-852 {
+  max-width: 852*$pxToRem;
+}
+
+.width-1088 {
+  max-width: 1088*$pxToRem !important;
+}
+
+.width-1128 {
+  max-width: 1128*$pxToRem !important;
+}
+
+.width-1330 {
+  max-width: 1330*$pxToRem !important;
+}
+
+.width-1364 {
+  max-width: 1364*$pxToRem;
+}
+
+.width-1640 {
+  max-width: 1640*$pxToRem;
+}
+
+.width-1920 {
+  // TODO: consider making this rems instead of px
+  max-width: 1920px;
+}

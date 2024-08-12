@@ -1,0 +1,195 @@
+.padding-bottom-25 {
+  padding-bottom: 25*$pxToVw !important;
+
+  @include media-lg-monitor-only {
+    padding-bottom: 25*$pxToRem !important;
+  }
+}
+
+.padding-v-30 {
+  padding-top: 30*$pxToRem !important;
+  padding-bottom: 30*$pxToRem !important;
+}
+
+.padding-v-50 {
+  padding-top: 50*$pxToRem;
+  padding-bottom: 50*$pxToRem;
+
+  @include media-mobile-only {
+    padding-top: $padding-mobile;
+    padding-bottom: $padding-mobile;
+  }
+}
+
+.padding-bottom-50 {
+  padding-bottom: 50*$pxToRem;
+}
+
+.padding-66 {
+  padding: 66*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding: 66*$pxToRem;
+  }
+}
+
+// 76
+.padding-default {
+  padding: $padding-default-vw;
+
+  @include media-mobile-only {
+    padding-top: $padding-mobile;
+    padding-bottom: $padding-mobile;
+  }
+
+  @include media-lg-monitor-only {
+    padding: $padding-default-rem;
+  }
+}
+
+// 76
+.padding-right-default {
+  padding-right: $padding-default-vw;
+
+  @include media-lg-monitor-only {
+    padding-right: $padding-default-rem;
+  }
+}
+
+.padding-left-default {
+  padding-left: $padding-default-vw;
+
+  @include media-lg-monitor-only {
+    padding-left: $padding-default-rem;
+  }
+}
+
+@include media-mobile-only {
+  [class^="grid-"],
+  [class*=' grid-'] {
+    & > .padding-right-default,
+    & > .padding-left-default {
+      padding-right: 0;
+      padding-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.padding-top-100 {
+  padding-top: 100*$pxToVw !important;
+
+  @include media-lg-monitor-only {
+    padding-top: 100*$pxToRem !important;
+  }
+}
+
+.padding-bottom-100 {
+  padding-bottom: 100*$pxToVw !important;
+
+  @include media-lg-monitor-only {
+    padding-bottom: 100*$pxToRem !important;
+  }
+}
+
+.padding-v-100 {
+  padding-top: 100*$pxToVw;
+  padding-bottom: 100*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding-top: 100*$pxToRem;
+    padding-bottom: 100*$pxToRem;
+  }
+}
+
+// 137
+.padding-thick {
+  padding: $padding-thick-vw;
+}
+
+// 76, 137
+.padding-section-content {
+  padding: $padding-default-vw $padding-thick-vw;
+
+  @include media-mobile-only {
+    padding-top: $padding-mobile !important;
+    padding-bottom: $padding-mobile !important;
+  }
+
+  @include media-lg-monitor-only {
+    padding: $padding-default-rem $padding-thick-rem;
+  }
+}
+
+@include media-mobile-only {
+  .padding-default > .padding-section-content:not([class^="container-border-"]):not([class*=' container-border-']):not([class^="bg-"]):not([class*=' bg-']) {
+    padding: 0 !important;
+  }
+
+  img + .padding-section-content {
+    margin-top: $padding-mobile;
+  }
+}
+
+.padding-v-145 {
+  padding-top: 145*$pxToVw;
+  padding-bottom: 145*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding-top: 145*$pxToRem;
+    padding-bottom: 145*$pxToRem;
+  }
+}
+
+.padding-v-150 {
+  padding-top: 150*$pxToVw;
+  padding-bottom: 150*$pxToVw;
+}
+
+.padding-top-170 {
+  padding-top: 170*$pxToRem;
+
+  @include media-mobile-only {
+    padding-top: 50px;
+  }
+}
+.padding-bottom-170 {
+  padding-bottom: 170*$pxToRem;
+
+  @include media-mobile-only {
+    padding-bottom: 50px;
+  }
+}
+
+.padding-xl2 {
+  padding: 180*$pxToRem $padding-default-vw;
+
+  @include media-lg-monitor-only {
+    padding: 180*$pxToRem $padding-default-rem;
+  }
+}
+
+// Below laptop size
+@include media-below-laptop {
+  .padding-thick,
+  .padding-section-content {
+    padding: $padding-default-vw;
+  }
+}
+
+// Large monitor size and above
+@include media-lg-monitor-only {
+  .padding-section-content,
+  .padding-default {
+    max-width: 1920px;
+  }
+
+  .padding-thick {
+    padding: $padding-thick-rem;
+  }
+
+  .padding-v-150 {
+    padding-top: 150*$pxToRem;
+    padding-bottom: 150*$pxToRem;
+  }
+}

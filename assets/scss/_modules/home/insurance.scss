@@ -1,0 +1,25 @@
+// section insurance theme
+
+.section__insurance {
+  .grid-2-col-5-7 {
+    @include media-below-desktop {
+      grid-template-columns: 1fr;
+    }
+  }
+  .left {
+    margin: -3rem 0;
+    @include media-below-desktop {
+      margin: 0;
+    }
+  }
+  .right {
+    @include media-mobile-only {
+      .grid-2-col {
+        grid-gap: 30px;
+      }
+    }
+    @include media-below-desktop {
+      padding: 5rem 3rem!important;
+    }
+  }
+}

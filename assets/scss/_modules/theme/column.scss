@@ -1,0 +1,11 @@
+.column-2 {
+  column-count: 2;
+  column-width: max-content;
+
+  @include media-mobile-only {
+    column-count: 1;
+    column-width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

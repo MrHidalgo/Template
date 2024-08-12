@@ -1,0 +1,166 @@
+body,
+input,
+textarea,
+button,
+select,
+.typography-body {
+  @include config-type-body;
+}
+
+h1{
+    span{
+        font-family: $body-font;
+        font-size: 1rem;
+        display: block;
+        @include media-mobile-only {
+            padding-top: 0.5rem;
+        }   
+    }
+}
+
+h1,
+h2,
+.typography-heading {
+  @include config-type-heading;
+}
+
+.inner{
+    h2 {
+      font-size: 2.75rem!important;
+      @include media-mobile-only {
+        font-size: 2rem!important;
+      }    
+    }
+}    
+
+h3,
+.typography-subheading {
+  @include config-type-subheading;
+}
+
+.typography-subheading-lg {
+  @include config-type-subheading-lg;
+  margin-bottom: 12*$pxToRem;
+}
+
+.typography-body-jumbo,
+.accordion__content {
+  font-size: $font-size-subheading*$pxToRem;
+}
+
+.typography-script {
+  @include config-type-script;
+}
+
+.typography-regular-case {
+  text-transform: none;
+}
+
+.typography-heading-lg {
+  @include config-type-heading-lg;
+}
+
+p,
+li,
+td {
+  // link inside the above
+  a {
+    font-weight: 500;
+  }
+}
+
+strong,
+b,
+th,
+strong a,
+.typography-heavy {
+  font-weight: 700;
+}
+
+small,
+.typography-fine-print {
+  @include config-type-fine-print;
+}
+
+//
+.typography-heading-container,
+.typography-heading-container-with-script {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: max-content;
+  padding-bottom: 8*$pxToRem;
+
+  h3 {
+    order: -1;
+    margin-top: $offset-subheading-micro*$pxToRem;
+    margin-bottom: $offset-subheading-micro*$pxToRem;
+  }
+
+  h2 {
+    margin-top: 0 !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  h4 {
+    @include config-type-script;
+    position: relative;
+    width: 100%;
+    text-align: right;
+    z-index: 1;
+    margin: -16*$pxToRem 0 0 0;
+  }
+
+  & + p.typography-heavy {
+    padding-right: 70*$pxToRem;
+
+    @include media-mobile-only {
+      padding-right: 0;
+    }
+  }
+}
+
+.typography-heading-container-with-script {
+  @include media-above-mobile {
+    width: 120%;
+
+    h3,
+    h2 {
+      padding-right: 70*$pxToRem;
+    }
+  }
+}
+
+.text-align-center .typography-heading-container {
+  margin: auto;
+
+  h2 {
+    width: auto;
+  }
+}
+
+.title {
+  font-family: $body-font;
+  color: $color-black;
+  font-size: 34*$pxToRem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+.bg-text {
+  font-family: $heading-font;
+  font-size: 492*$pxToRem;
+  font-weight: 500;
+  color: $color-white;
+  letter-spacing: 6rem;
+  line-height: .2;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: -8rem;
+  z-index: -1;
+}
+.uppercase {
+  text-transform: uppercase;
+}

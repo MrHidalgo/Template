@@ -1,0 +1,66 @@
+// utils module core
+
+$pxToRem: 1 / 16 * 1rem;
+$pxToVw: 100 / 1920 * 1vw;
+$trackingToLetterSpacing: 1 / 1000 * 1em;
+
+// Used to force RGB format (needed for data SVG
+@function rgb-format($color) {
+  @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})");
+}
+
+// Get a ratio line-height value from font-size and line-height in pixels
+@function getLineHeight($fontSize, $lineHeight) {
+  @return $lineHeight / $fontSize;
+}
+
+@function getLetterSpacing($tracking) {
+  @return $tracking*$trackingToLetterSpacing;
+}
+
+@function getElementOffset($fontSize, $lineHeight) {
+  @return ($lineHeight - $fontSize) / 2;
+}
+
+@function pxToVw($num) {
+  // using 1920 as viewport width based on design
+  @return #{($num * 100) / 1920}vw;
+}
+
+@mixin util-antialiasing-crisp {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin util-antialiasing-default {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+@mixin util-pseudo-layer {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin util-align-children-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin util-flex-row-align-children-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin util-flex-column-align-children-center {
+  @include util-flex-row-align-children-center;
+  flex-direction: column;
+}

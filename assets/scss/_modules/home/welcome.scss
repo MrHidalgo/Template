@@ -1,0 +1,72 @@
+// section welcome theme
+
+.section__welcome {
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 15%;
+  @include media-below-desktop { 
+      background-image: none!important;
+  }
+  .left {
+    position: relative;
+     .spinning-symbol{
+        position: absolute;
+        z-index: 10;
+        bottom: -4rem;
+        right: -4rem; 
+        @include media-mobile-only {
+         right: 3rem; 
+        }
+      }  
+  }
+  .right {
+    @include media-mobile-only {
+        order:-1;
+    }  
+    h2 {
+        font-size: 4rem;
+        background: $color-white;
+        position: relative;
+        left: -40%;
+        padding: 1.5rem 3rem 0.4rem;
+        z-index: 10;
+        display: inline-block;
+        margin-top: 6rem;
+        @include media-below-laptop {
+            font-size: 3rem;
+        }
+        @include media-tablet-only {
+            font-size: 2.5rem;
+        }
+        @include media-mobile-only {
+            left: 0;
+            padding: 0;
+            font-size: 2rem;
+            line-height: normal;
+            margin-top: 0;
+        }
+    }
+      .subtitle{
+          font-size: 34*$pxToRem;
+          font-family: $heading-font;
+          line-height: 3rem;
+          color: $color-blue;
+          @include media-tablet-only {
+            font-size: 1.5rem;
+              line-height: 1.4;
+        }
+          @include media-mobile-only {
+              font-size: 1.25rem;
+              line-height: 1.2;
+          }
+      }
+      .btn-wrap{
+          display: flex;
+          justify-content: flex-end;
+          @include media-mobile-only {
+              justify-content: flex-start;
+          }
+      }  
+     
+  }    
+}

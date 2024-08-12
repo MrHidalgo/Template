@@ -1,0 +1,19 @@
+// section dental theme
+
+.section__dental {
+  .grid-2-col-7-5 {
+    @include media-below-desktop {
+      grid-template-columns: 1fr;
+    }
+  }
+  .left {
+    @include media-below-desktop {
+      order: 2;
+    }
+  }
+  .right {
+    @include media-below-desktop {
+      padding: 0 $padding-default-vw 3rem!important;
+    }
+  }
+}

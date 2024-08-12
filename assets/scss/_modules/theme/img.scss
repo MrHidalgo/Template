@@ -1,0 +1,48 @@
+@include media-above-mobile {
+  .img-full-height {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.img-gutter-pull-right {
+  width: calc(100% + #{$gutter-size-16});
+  margin-right: -#{$gutter-size-16};
+}
+
+//
+// Stock photos need to be marked "Stock image"
+//
+.banner-stock-disclaimer {
+  text-align: left;
+  color: #FFF;
+  font-size: 0.6rem;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 99;
+}
+.stock-img-before::before {
+  content: "*Stock image";
+  color: #FFF;
+  font-size: 0.6rem;
+  position: relative;
+  top: 30px;
+  left: 15px;
+  z-index: 99;
+}
+.stock-img-before-inv::before {
+  color: #000;
+}
+.stock-img-after::after {
+  content: "*Stock image";
+  color: #FFF;
+  font-size: 0.6rem;
+  position: relative;
+  bottom: 30px;
+  left: 15px;
+  z-index: 99;
+}
+.stock-img-before-inv::after {
+  color: #000;
+}

@@ -1,0 +1,59 @@
+// TODO:
+// - differentiate betwen "align myself" and "align my children"
+// - move text align outsie of align module?
+
+/* align module: core */
+
+// align-self-centered
+// align-self-centered-h
+// align-self-centered-v
+// align-self-left
+// align-self-top
+// align-self-right
+// align-self-bottom
+
+// align-children-centered
+// align-children-left
+// align-children-right
+// align-children-bottom
+// align-children-top
+
+.align-children-center {
+  @include util-align-children-center;
+}
+
+.align-center {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-right {
+  text-align: right;
+}
+
+// This is default, but could be useful as an override when
+// element inherits center or right alignment from an ancestor
+.align-left {
+  text-align: left;
+}
+
+.align-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}

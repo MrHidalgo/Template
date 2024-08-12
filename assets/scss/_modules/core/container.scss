@@ -1,0 +1,7 @@
+/* container module: core */
+
+// Mean to be a relative ancestor of items positioned absolute
+// TODO: Consdier renaming this "relative-container" or something
+.container {
+  position: relative;
+}

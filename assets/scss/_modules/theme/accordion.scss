@@ -1,0 +1,175 @@
+/* accordion module: theme */
+
+.accordion {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+
+  &:not(:first-child) {
+    margin-top: 56*$pxToRem;
+  }
+
+  .accordion__item {
+    border: 1*$pxToRem solid $color-gray-10;
+
+    &:not(:first-child) {
+      border-top-width: 0;
+    }
+  }
+
+  .accordion__header {
+    margin: 0;
+    button {
+      @include config-type-body;
+      font-size: 22*$pxToRem;
+      display: flex;
+      transition: color $transition-default;
+      text-align: left;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      padding: 23*$pxToRem 40*$pxToRem;
+
+      @include media-mobile-only {
+        padding-left: $padding-mobile;
+        padding-right: 30px;
+      }
+
+      .accordion__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24*$pxToRem;
+        min-width: 24*$pxToRem;
+        height: 24*$pxToRem;
+        margin: 6*$pxToRem -6*$pxToRem -2*$pxToRem auto;
+        position: relative;
+        padding-left: 40*$pxToRem;
+
+        @include media-mobile-only {
+          margin-top: 0;
+        }
+  
+        &:before,
+        &:after {
+          display: block;
+          content: '';
+          position: absolute;
+          background: $color-text;
+          width: 4*$pxToRem;
+          height: 24*$pxToRem;
+          transition: transform $transition-default,
+                      opacity $transition-default,
+                      background-color $transition-default;
+        }
+  
+        &:before {
+          transform: rotate(90deg);
+        }
+      }
+
+      &:hover {
+        color: $color-accent;
+
+        .accordion__icon {
+          &:before,
+          &:after {
+            background: $color-accent;
+          }
+        }
+      }
+
+      &:active {
+        color: $color-text;
+        transition-duration: 0s;
+
+        .accordion__icon {
+          &:before,
+          &:after {
+            background: $color-text;
+            transition-duration: 0s;
+          }
+        }
+      }
+    }
+  }
+
+  .accordion__panel {
+    height: 0;
+    overflow: hidden;
+    transition: height $transition-default;
+
+    .accordion__content {
+      padding: 32*$pxToRem 80*$pxToRem 64*$pxToRem 80*$pxToRem;
+      opacity: 0;
+      position: relative;
+      transition: opacity $transition-default;
+      color: $color-black;
+      font-size: 1rem;
+
+      @include media-mobile-only {
+        padding: 24px 48*$pxToRem 48px 48*$pxToRem;
+      }
+    }
+
+    // Offsetting default list styles by 1 level since parent structure is itself a list
+    ul {
+      list-style-type: disc;
+
+      ul {
+        list-style-type: circle;
+
+        ul {
+          list-style-type: square;
+        }
+      }
+    }
+  }
+
+  // Transitioning state
+  .accordion__item--expanding {
+    .accordion__content {
+      opacity: 1;
+    }
+  }
+
+  // Expanded state
+  .accordion__item--expanded {
+    .accordion__panel {
+      overflow: visible;
+      height: auto;
+
+      .accordion__content {
+        opacity: 1;
+      }
+    }
+  }
+
+  .accordion__item--expanding,
+  .accordion__item--expanded {
+    .accordion__header {
+      button {
+        .accordion__icon {
+          &:after {
+            transform: rotate(90deg);
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+ol.accordion {
+  counter-reset: counter;
+
+  & > li {
+    counter-increment: counter;
+  
+    .accordion__header button span:first-child::before {
+      content: counter(counter, decimal-leading-zero);
+      padding-right: 12*$pxToRem;
+      opacity: 0.33;
+    }
+  }
+}

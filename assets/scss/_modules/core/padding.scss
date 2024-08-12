@@ -1,0 +1,97 @@
+/* padding module: core */
+
+.padding-md {
+  padding: $padding-md*$pxToVw;
+
+  @include media-mobile-only {
+    padding: $padding-mobile;
+  }
+
+  @include media-lg-monitor-only {
+    padding: $padding-md*$pxToRem;
+  }
+}
+
+.padding-lg {
+  padding: $padding-lg*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding: $padding-lg*$pxToRem;
+  }
+}
+
+.padding-xl {
+  padding: $padding-xl*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding: $padding-xl*$pxToRem;
+  }
+}
+
+.padding-xxl {
+  padding: $padding-xxl*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding: $padding-xxl*$pxToRem;
+  }
+}
+
+.padding-top-md {
+  padding-top: $padding-top-md*$pxToVw;
+
+  @include media-mobile-only {
+    padding-top: $padding-mobile;
+  }
+
+  @include media-lg-monitor-only {
+    padding-top: $padding-top-md*$pxToRem;
+  }
+}
+
+.padding-bottom-md {
+  padding-bottom: $padding-top-md*$pxToVw;
+
+  @include media-mobile-only {
+    padding-bottom: $padding-mobile;
+  }
+
+  @include media-lg-monitor-only {
+    padding-bottom: $padding-top-md*$pxToRem;
+  }
+}
+
+.padding-h-lg {
+  padding-left: $padding-lg*$pxToVw;
+  padding-right: $padding-lg*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding-left: $padding-lg*$pxToRem;
+    padding-right: $padding-lg*$pxToRem;
+  }
+}
+
+.padding-v-xl {
+  padding-top: $padding-xl*$pxToVw;
+  padding-bottom: $padding-xl*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding-top: $padding-xl*$pxToRem;
+    padding-bottom: $padding-xl*$pxToRem;
+  }
+}
+
+.padding-top-xl {
+  padding-top: $padding-xl*$pxToVw;
+
+  @include media-lg-monitor-only {
+    padding-top: $padding-xl*$pxToRem;
+  }
+}
+
+.padding-bottom-none {
+  padding-bottom: 0 !important;
+}
+
+.padding-top-none {
+  padding-top: 0 !important;
+}

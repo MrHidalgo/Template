@@ -1,0 +1,110 @@
+/* columns module: core */
+// TODO: consider if this would make more sense renamed to grid. .grid-1, .grid-2, etc.
+
+// any element with a class that starts with "grid-"
+.grid,
+[class^="grid-"],
+[class*=' grid-'] {
+  display: grid;
+  width: 100%;
+    @include media-mobile-only {
+        width: auto;
+    }    
+}
+
+// 2 column layout, equal widths
+.grid-2-col {
+  grid-template-columns: 1fr 1fr;
+}
+
+// 2 column layout with 5:7 ratio
+.grid-2-col-5-7 {
+  grid-template-columns: 5fr 7fr;
+}
+
+// 2 column layout with 6:5 ratio
+.grid-2-col-6-5 {
+  grid-template-columns: 6fr 5fr;
+}
+
+// 2 column layout with 7:5 ratio
+.grid-2-col-7-5 {
+  grid-template-columns: 7fr 5fr;
+}
+
+// 2 column layout with 3:8 ratio
+.grid-2-col-3-8 {
+  grid-template-columns: 3fr 8fr;
+}
+
+// 2 column layout with 8:3 ratio
+.grid-2-col-8-3 {
+  grid-template-columns: 8fr 3fr;
+}
+
+// 3 column layout, equal widths
+.grid-3-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+// 3 column layout with 2:3:4 ratio
+.grid-3-col-2-3-4 {
+  grid-template-columns: 2fr 3fr 4fr;
+}
+
+// 3 column layout with 2:4:3 ratio
+.grid-3-col-2-4-3 {
+  grid-template-columns: 2fr 4fr 3fr;
+}
+
+// 3 column layout with 4:3:2 ratio
+.grid-3-col-4-3-2 {
+  grid-template-columns: 4fr 3fr 2fr;
+}
+
+// 3 column layout with 2:3:2 ratio
+.grid-3-col-2-3-2 {
+  grid-template-columns: 2fr 3fr 2fr;
+}
+
+// 4 column layout, equal widths
+.grid-4-col {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  @include media-below-desktop {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// 5 column layout, equal widths
+.grid-5-col {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+@include media-mobile-only {
+  .grid-2-col,
+  .grid-2-col-5-7,
+  .grid-2-col-6-5,
+  .grid-2-col-7-5,
+  .grid-2-col-3-8,
+  .grid-2-col-8-3,
+  .grid-3-col,
+  .grid-3-col-2-3-4,
+  .grid-3-col-2-4-3,
+  .grid-3-col-4-3-2,
+  .grid-3-col-2-3-2,
+  .grid-4-col,
+  .grid-5-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-no-stretch {
+  align-items: flex-start;
+}
+
+.grid-vertically-center-children > * {
+  align-self: center;
+  justify-self: center;
+}

@@ -1,0 +1,49 @@
+/* form module: theme */
+
+form {
+  .grid-2-col {
+    gap: 0 0.5rem;
+    margin-bottom: 24*$pxToRem;
+  }
+
+  input,
+  textarea,
+  select {
+    outline: 1*$pxToRem solid $color-gray-8;
+    outline-offset: 0 !important;
+    padding: 25*$pxToRem 36*$pxToRem;
+    font-size: 21*$pxToRem;
+    width: 100%;
+    height: 100%;
+
+    &::placeholder {
+      color: $color-form-placeholder;
+    }
+
+    &:hover:not(:focus) {
+      outline-color: $color-gray-7;
+    }
+  }
+
+  select {
+    background: url(getSelectBgImageData()) right 30*$pxToRem center / #{17*$pxToRem 9*$pxToRem} no-repeat;
+    padding-right: 80*$pxToRem;
+
+    &:hover,
+    &:focus {
+      background-image: url(getSelectBgImageData('black'));
+    }
+  }
+
+  textarea {
+    min-height: 240*$pxToRem !important;
+  }
+
+  button {
+    @include config-button-black;
+    margin-top: 40*$pxToRem;
+    &:hover {
+      background: transparent;
+    }
+  }
+}

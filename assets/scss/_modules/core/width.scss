@@ -1,0 +1,26 @@
+/* width module: core */
+
+// TODO: consider renaming this module 'max-width'
+
+// any element with a class that starts with "width-"
+[class^="width-"],
+[class*=' width-'] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.width-md {
+  max-width: $size-md;
+}
+
+.width-xl {
+  max-width: $size-xl;
+}
+
+.width-full {
+  max-width: 100%;
+}
+
+.width-content {
+  max-width: max-content !important;
+}

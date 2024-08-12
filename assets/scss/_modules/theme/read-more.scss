@@ -1,0 +1,86 @@
+/* read-more-link module: theme */
+
+@keyframes textSpin {
+  from {
+    transform: rotate(14deg);
+  }
+  to {
+    transform: rotate(374deg);
+  }
+}
+
+.read-more {
+  @include media-above-mobile {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  
+    &,
+    svg,
+    .read-more__circle {
+      display: block;
+      transform-style: preserve-3d;
+    }
+  
+    &,
+    .read-more__circle {
+      width: 200*$pxToRem;
+      height: 200*$pxToRem;
+    }
+    
+    svg,
+    .read-more__circle,
+    .read-more__text,
+    .read-more__arrow {
+      position: absolute;
+    }
+  
+    .read-more__circle {
+      background: $color-accent;
+      border-radius: 100%;
+      transform: scale(0.93);
+      transition: transform $transition-default;
+    }
+  
+    .read-more__text {
+      width: 160*$pxToRem;
+      height: 160*$pxToRem;
+      left: 20*$pxToRem;
+      top: 20*$pxToRem;
+      transform: rotate(14deg);
+    }
+  
+    .read-more__arrow {
+      width: 42*$pxToRem;
+      height: 29*$pxToRem;
+      transition: transform $transition-default;
+      transform: rotate(-45deg) translate(-5*$pxToRem, 116*$pxToRem);
+    }
+  
+    &:hover {
+      .read-more__text {
+        transform: none;
+        animation: textSpin 8s linear infinite;
+      }
+      .read-more__circle {
+        transform: scale(1);
+      }
+  
+      .read-more__arrow {
+        transform: rotate(-45deg) translate(9*$pxToRem, 116*$pxToRem);
+      }
+    }
+  }
+}
+
+@include media-mobile-only {
+  .read-more {
+    @include config-read-more-mobile-button;
+  }
+}
+
+@include media-mobile-only {
+  .inverted .read-more {
+    @include config-button-pink;
+  }
+}

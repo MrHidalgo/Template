@@ -1,0 +1,21 @@
+/* logo module: theme */
+
+.logo {
+  &,
+  img,
+  svg {
+    display: block;
+  }
+
+  // hack to improve svg antialiasing in Chrome
+  svg {
+    transition: all $transition-default;  
+    height: 55px;
+    @include media-mobile-only {  
+        transform: scale(0.6);  
+        height: auto;
+        left: -55px;
+    position: relative;
+      }
+  }
+}

@@ -1,0 +1,483 @@
+// TODO: This is kind of a catch-all / misc file but these should probably be split out into their own modules
+
+.container-offset-left {
+  @include media-above-mobile {
+    padding-right: calc(#{72*$pxToVw} + #{$gutter-size-16});
+    margin-right: calc(-#{72*$pxToVw} + -#{$gutter-size-16});
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.container-offset-right {
+  @include media-above-mobile {
+    padding-left: calc(#{72*$pxToVw} + #{$gutter-size-16}) !important;
+    margin-left: calc(-#{72*$pxToVw} + -#{$gutter-size-16}) !important;
+    margin-top: 60*$pxToVw;
+    margin-bottom: 60*$pxToVw;
+  }
+
+  @include media-lg-monitor-only {
+    margin-top: 60*$pxToRem;
+    margin-bottom: 60*$pxToRem;
+  }
+
+  @include media-mobile-only {
+    &.padding-section-content {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+.padding-default {
+  .container-offset-left,
+  .container-offset-right {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container-before-after-sample {
+  position: relative;
+  box-sizing: border-box;
+
+  h2 {
+    @include config-type-heading-lg;
+    margin-top: 30*$pxToRem;
+
+    span {
+      margin: 0 0 -34*$pxToRem 6*$pxToRem;
+    }
+
+    @include media-mobile-only {
+      font-size: 54*$pxToRem;
+
+      span {
+        margin-bottom: -10*$pxToRem;
+      }
+    }
+  }
+
+  .hr {
+    max-width: 260*$pxToRem;
+    margin: 30*$pxToRem auto 40*$pxToRem auto;
+
+    @include media-mobile-only {
+      margin: 10*$pxToRem auto 20*$pxToRem auto;
+    }
+  }
+
+  h2,
+  .hr,
+  figcaption {
+    position: relative;
+    z-index: 3;
+  }
+
+  figure {
+    display: block;
+    width: 100%;
+    img {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+
+      &:first-child {
+        left: 0;
+      }
+
+      & + img {
+        right: 0;
+      }
+    }
+
+    figcaption {
+      @include config-type-subheading;
+    }
+    
+  }
+
+  .read-more {
+    right: -100*$pxToRem;
+    bottom: -100*$pxToRem;
+  }
+
+  @include media-below-laptop {
+    .read-more {
+      @include config-read-more-mobile-button;
+      @include config-button-pink;
+      position: static;
+      right: auto;
+      bottom: auto;
+      margin: 30*$pxToRem auto;
+    }
+  }
+
+  @include media-mobile-only {
+    .read-more {
+      margin-bottom: 10*$pxToRem;
+    }
+  }
+}
+
+.container-wellness {
+  display: grid;
+  grid-template-columns: 55fr 41fr;
+  position: relative;
+  z-index: 5;
+  padding: 100*$pxToVw 0 $padding-default-vw 0;
+
+  @include media-mobile-only {
+    display: block;
+  }
+
+  .bg-gray-2 {
+    position: relative;
+    bottom: -$padding-default-vw*2;
+  }
+
+  .nav {
+    ul {
+      gap: 52*$pxToVw;
+    }
+  }
+
+  @include media-lg-monitor-only {
+    padding: 100*$pxToRem 0 $padding-default-rem 0;
+
+    .bg-gray-2 {
+      bottom: -$padding-default-rem*2;
+    }
+  
+    .nav {
+      ul {
+        gap: 52*$pxToRem;
+      }
+    }
+  }
+
+  @include media-below(1600) {
+    grid-template-columns: 60fr 40fr;
+    gap: 0;
+
+    .bg-gray-2 {
+      padding: $padding-default-vw;
+    }
+
+    .nav {
+      ul {
+        gap: 20*$pxToRem;
+      }
+    }
+  }
+}
+
+.container-gallery-promo {
+  .container {
+    @include media-above-mobile {
+      padding: 172*$pxToVw 78*$pxToVw;
+    }
+
+    @include media-lg-monitor-only {
+      padding: 172*$pxToRem 78*$pxToRem;
+    }
+  }
+
+  .bg-cover-photo {
+    background-image: url(#{$imagesPath}bg-gallery-promo.jpg);
+
+    @include media-above-mobile {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      right: 0;
+    }
+
+    @include media-mobile-only {
+      width: 100%;
+      height: 60vw;
+    }
+  }
+
+  h2 {
+    @include config-type-heading-lg;
+    position: relative;
+    width: max-content;
+    margin: auto;
+
+    @include media-above-mobile {
+      .typography-script {
+        display: block;
+        position: absolute;
+        margin: 32*$pxToRem 0 0 -68*$pxToRem;
+      }
+    }
+
+    @include media-mobile-only {
+      padding: 0 $padding-mobile;
+      margin-top: 30px;
+
+      .typography-script {
+        display: inline !important;
+      }
+    }
+  }
+
+  .nav {
+    @include media-mobile-only {
+      margin: $padding-mobile;
+    }
+
+    .hr {
+      margin-top: 21*$pxToVw;
+      margin-bottom: 13*$pxToVw;
+
+      @include media-lg-monitor-only {
+        margin-top: 21*$pxToRem;
+        margin-bottom: 13*$pxToRem;
+      }
+    }
+
+    ul {
+      gap: 40*$pxToVw;
+
+      @include media-lg-monitor-only {
+        gap: 40*$pxToRem;
+      }
+    }
+  }
+}
+
+.container-column-menu {
+  margin-top: 16*$pxToRem;
+
+  a {
+    display: block;
+  }
+
+  h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include media-above-mobile {
+      min-height: 128*$pxToRem;
+    }
+
+    @include media-below(1200) {
+      font-size: 36*$pxToRem;
+      line-height: 1.25;
+    }
+  }
+
+  & > div:not(:first-child) > h2 {
+    @include media-mobile-only {
+      margin-top: $padding-mobile;
+    }
+  }
+
+  img {
+    margin: 36*$pxToRem auto 30*$pxToRem auto;
+  }
+}
+
+.container-tiled-corner-box {
+  margin: 50*$pxToRem 50*$pxToRem 50*$pxToRem 30*$pxToRem;
+
+  @include media-mobile-only {
+    margin: 30px;
+
+    .padding-xl2 {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+
+  .container-tiled-corner-box__tiles {
+    position: relative;
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 80%;
+      height: 78%;
+      z-index: 0;
+      background: $color-gray-10 url(#{$imagesPath}bg-tile-light-sm.jpg) center center / cover no-repeat;
+      opacity: 0.4;
+    }
+
+    &::before {
+      top: -50*$pxToRem;
+      right: -50*$pxToRem;
+    }
+
+    &::after {
+      bottom: -50*$pxToRem;
+      left: -50*$pxToRem;
+    }
+
+    @include media-mobile-only {
+      &::before {
+        top: -30*$pxToRem;
+        right: -30*$pxToRem;
+      }
+  
+      &::after {
+        bottom: -30*$pxToRem;
+        left: -30*$pxToRem;
+      }
+    }
+  }
+}
+
+.container-border-left,
+.container-border-right {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: $border-thickness*$pxToRem;
+    height: 100%;
+    position: absolute;
+    background: $color-accent;
+    top: 0;
+  }
+
+  @include media-mobile-only {
+    &::before {
+      display: none;
+    }
+    
+    &.padding-section-content {
+      padding: 0 $padding-mobile;
+    }
+
+    &:first-child {
+      margin-bottom: $padding-mobile;
+    }
+
+    &:not(:first-child) {
+      margin-top: $padding-mobile;
+    }
+  }
+}
+
+.container-border-left {
+  &::before {
+    left: 0;
+  }
+
+  @include media-mobile-only {
+    border-left: $border-thickness*$pxToRem solid $color-accent;
+  }
+}
+
+.container-border-right {
+  &::before {
+    right: 0;
+  }
+
+  @include media-mobile-only {
+    border-right: $border-thickness*$pxToRem solid $color-accent;
+  }
+}
+
+.container-box-sizing {
+  box-sizing: border-box;
+
+  @include media-above-mobile {
+    padding-bottom: 90*$pxToRem;
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto 50*$pxToRem auto;
+    width: 100%;
+    height: 36*$pxToRem;
+    max-width: 272*$pxToRem;
+  }
+}
+
+.container-review-tiles {
+  list-style: none;
+  padding: 14*$pxToRem 0 100*$pxToVw 0;
+
+  @include media-lg-monitor-only {
+    padding-bottom: 100*$pxToRem;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    background: $color-gray-1;
+    padding: 54*$pxToRem 32*$pxToRem 46*$pxToRem 32*$pxToRem;
+    overflow: hidden;
+    position: relative;
+
+    @include media-mobile-only {
+      padding: 32px $padding-mobile;
+    }
+
+    svg {
+      display: block;
+      width: 65*$pxToRem;
+      height: 40*$pxToRem;
+      margin: 0 auto 6*$pxToRem auto;
+      fill: $color-accent;
+      transition: fill $transition-default;
+    }
+
+    span:not(.sr-only) {
+      display: block;
+      @include config-type-subheading-lg;
+      color: $color-text-inverted;
+      transition: color $transition-default;
+
+      @include media-above-mobile {
+        font-size: 30*$pxToRem;
+        margin: 40*$pxToRem auto 12*$pxToRem auto;
+      }
+    }
+
+    // Accent color pipe ornament that animates on hover
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      background-color: $color-accent;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: transform $transition-default;
+      // offset colored background box by default (clipped by parent)
+      transform: translateX(-100%);
+    }
+  
+    &:hover {
+      span {
+        color: $color-text;
+      }
+
+      svg {
+        fill: $color-text;
+      }
+
+      &::after {
+        // remove offset (i.e. colored box appears to slide all the way out)
+        transform: translateX(0);
+      }
+    }
+  }
+}

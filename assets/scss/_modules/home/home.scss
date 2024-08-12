@@ -1,0 +1,23 @@
+// dependencies imports
+@import '../core/_utils';
+@import '../core/_media';
+@import '../theme/_config';
+
+// default theme dependencies imports
+// do not remove
+@import '_page';
+@import '_banner';
+@import '_blocks';
+@import '_tabs';
+@import '_svg';
+@import '_menus';
+
+// theme sections module imports
+@import 'welcome';
+@import 'patient';
+@import 'dental';
+@import 'insurance';
+@import 'staff';
+@import 'testimonials';
+@import 'schedule';
+@import 'types';

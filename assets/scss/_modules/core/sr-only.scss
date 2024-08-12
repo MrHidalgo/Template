@@ -1,0 +1,32 @@
+/* sr-only module: core */
+
+// From https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+// Appears to be based on https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link
+// Above gomakethings.com URL linked to by MDN:
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#accessibility_concerns
+
+// TODO: Consider simplifying this code to look more like its original 'gomakethings' state
+// With this first principles based framework, having !important on every rule is likely unnecessary.
+// TODO: Investigate need to adding focusability for screen readers on visually-hidden elements (see above examples)
+
+.sr-only {
+  @include config-sr-only;
+}
+
+@include media-above-mobile {
+  .sr-and-mobile-only {
+    @include config-sr-only;
+  }
+}
+
+@include media-above(1200) {
+  .sr-and-above-tablet {
+    @include config-sr-only;
+  }
+}
+
+@include media-above-laptop {
+  .sr-and-above-laptop {
+    @include config-sr-only;
+  }
+}

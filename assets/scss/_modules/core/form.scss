@@ -1,0 +1,20 @@
+/* form module: core */
+
+form {
+  input,
+  textarea,
+  select {
+    box-sizing: border-box;
+    display: block;
+    appearance: none;
+    border: none;
+  }
+
+  select {
+    cursor: pointer;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}

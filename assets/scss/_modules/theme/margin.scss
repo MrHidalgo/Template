@@ -1,0 +1,132 @@
+.margin-top-25 {
+  margin-top: 25*$pxToRem !important;
+}
+
+.margin-top-45 {
+  margin-top: 45*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-top: 45*$pxToRem;
+  }
+}
+
+.margin-bottom-66 {
+  margin-bottom: 66*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-bottom: 66*$pxToRem;
+  }
+}
+
+.margin-top-70 {
+  margin-top: 70*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-top: 70*$pxToRem;
+  }
+}
+
+// 76
+.margin-default {
+  margin: $padding-default-vw auto;
+
+  @include media-lg-monitor-only {
+    margin: $padding-default-rem auto;
+  }
+
+  @include media-mobile-only {
+    margin: $padding-mobile auto;
+  }
+}
+
+// 76
+.margin-top-default {
+  margin-top: $padding-default-vw;
+
+  @include media-lg-monitor-only {
+    margin-top: $padding-default-rem;
+  }
+}
+
+.margin-top-100 {
+  margin-top: 100*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-top: 100*$pxToRem;
+  }
+}
+
+.margin-top-125 {
+  margin-top: 125*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-top: 125*$pxToRem;
+  }
+}
+
+.banner + .margin-top-125 {
+  @include media-mobile-only {
+    margin-top: 0;
+  }
+}
+
+.margin-bottom-125 {
+  margin-bottom: 125*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-bottom: 125*$pxToRem;
+  }
+}
+
+.margin-top-180 {
+  margin-top: 180*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-top: 180*$pxToRem;
+  }
+}
+
+.margin-top-200 {
+  margin-top: 200*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-top: 200*$pxToRem;
+  }
+}
+
+.margin-bottom-200 {
+  margin-bottom: 200*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-bottom: 200*$pxToRem;
+  }
+}
+
+.margin-top-250 {
+  margin-top: 250*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-top: 250*$pxToRem;
+  }
+}
+.margin-top-300 {
+  margin-top: 300*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-top: 300*$pxToRem;
+  }
+}
+.margin-bottom-300 {
+  margin-bottom: 300*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-bottom: 300*$pxToRem;
+  }
+}
+.margin-bottom-400 {
+  margin-bottom: 450*$pxToVw;
+
+  @include media-lg-monitor-only {
+    margin-bottom: 450*$pxToRem;
+  }
+}

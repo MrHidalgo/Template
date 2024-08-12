@@ -1,0 +1,119 @@
+// Breakpoints
+
+// 320 // legacy iPhone portrait
+// 375 // 2022 iPhone portrait
+// 568 // Pure Grid's aproximation of mobile landscape
+$media-breakpoint-tablet-portrait: 768; // iPad Portrait
+// 834 // *
+$media-breakpoint-tablet-landscape: 1024; // iPad Landscape
+// 1112 // *
+// 1200 // *
+// 1280 // *
+$media-breakpoint-laptop: 1366; // Avg. desktop screen size as of 2022
+// 1440 // MacbookPro
+// 1560 // *
+// 1600 // *
+$media-breakpoint-lg-monitor: 1920;
+// 2560 // 27" Apple Thunderbolt display
+//
+// * other common screen sizes from https://gs.statcounter.com/screen-resolution-stats/desktop/worldwide
+
+// Note: about responsove media-blow() and media-above() mixins: no units
+// since math is done to these numbers, but note these are the rare
+// exception values that should be rendered in pixels and not rems since
+// it deals with fixed viewport size.
+
+// TODO: Look at this: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+
+// Get the responsive breakpoint string for max-width
+// breaking from large to small (a.k.a. desktop first)
+@mixin media-below($breakpoint) {
+  @media screen and (max-width: #{$breakpoint}px) {
+    @content;
+  }
+}
+
+// Get the responsive breakpoint string for min-width
+// breaking from small to large (a.k.a. mobile first)
+@mixin media-above($breakpoint) { // expects number, px is added
+  @media screen and (min-width: #{$breakpoint + 1}px) {
+    @content;
+  }
+}
+
+
+// Below tablet portrait (< 768)
+// would be same as media-below-tablet
+@mixin media-mobile-only {
+  @media screen and (max-width: #{$media-breakpoint-tablet-portrait - 1}px) {
+    @content;
+  }
+}
+
+// Tablet portrait and up (768+)
+@mixin media-above-mobile {
+  @media screen and (min-width: #{$media-breakpoint-tablet-portrait}px) {
+    @content;
+  }
+}
+
+// Min tablet portrait to max tablet landscape (768-1024)
+@mixin media-tablet-only {
+  @media screen and
+    (min-width: #{$media-breakpoint-tablet-portrait}px) and
+    (max-width: #{$media-breakpoint-tablet-landscape}px) {
+    @content;
+  }
+}
+
+// Tablet landscape and smaller (< 1024)
+@mixin media-below-desktop {
+  @media screen and (max-width: #{$media-breakpoint-tablet-landscape}px) {
+    @content;
+  }
+}
+
+// Above tablet landscape (> 1024)
+// would be same as media-above-tablet
+@mixin media-desktop-only {
+  @media screen and (min-width: #{$media-breakpoint-tablet-landscape + 1}px) {
+    @content;
+  }
+}
+
+// Min tablet landscape to min laptop (1024-1366)
+@mixin media-laptop-only {
+  @media screen and
+  (min-width: #{$media-breakpoint-tablet-landscape}px) and
+  (max-width: #{$media-breakpoint-laptop}px) {
+    @content;
+  }
+}
+
+// Below laptop size (< 1366)
+@mixin media-below-laptop {
+  @media screen and (max-width: #{$media-breakpoint-laptop}px) {
+    @content;
+  }
+}
+
+// Above laptop size (> 1366)
+@mixin media-above-laptop {
+  @media screen and (min-width: #{$media-breakpoint-laptop + 1}px) {
+    @content;
+  }
+}
+
+// Below Large Monitor size (< 1920)
+@mixin media-below-lg-monitor {
+  @media screen and (max-width: #{$media-breakpoint-lg-monitor}px) {
+    @content;
+  }
+}
+
+// Large monitor size and above (1920+)
+@mixin media-lg-monitor-only {
+  @media screen and (min-width: #{$media-breakpoint-lg-monitor + 1}px) {
+    @content;
+  }
+}

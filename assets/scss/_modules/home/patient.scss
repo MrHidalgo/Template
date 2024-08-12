@@ -1,0 +1,63 @@
+// section patient theme
+
+.section__patient {
+  //@include media-below-desktop {
+  //  margin-top: 0;
+  //}
+  .grid-2-col-8-3 {
+    @include media-below-desktop {
+      grid-template-columns: 1fr;
+      .left {
+        order: 2;
+      }
+      .right {
+        padding: 1rem $padding-default-vw 3rem!important;
+      }
+    }
+  }
+  .box {
+    background: rgba($color-black,.84);
+    max-width: 320px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .top,
+    .mid,
+    .bottom {
+      padding: 4rem 3rem;
+      position: relative;
+      .title {
+        color: $color-white;
+        font-size: .9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+      p {
+        color: $color-white;
+        font-size: .9rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+    .mid {
+      &:before,
+      &:after {
+        background-color: $color-white;
+        content: '';
+        display: block;
+        width: 60%;
+        height: 1px;
+        position: absolute;
+        left: auto;
+        right: 5px;
+      }
+      &:before {
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+      }
+    }
+  }
+}
