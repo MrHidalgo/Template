@@ -244,6 +244,13 @@
 	letter-spacing: .03em;
 }
 
+@media screen and (max-width: 1279px) {
+	.section__banner--block .hero-text-wrap .hero-title {
+		font-size: 3rem;
+	}
+}
+
+
 .inverted a.btn,
 .inverted a.button-icon,
 a.btn.inverted,
@@ -275,6 +282,12 @@ a.button-icon.inverted {
 	/*max-height: 720px;*/
 	width: 100px;
 	background-color: #476a86;
+}
+
+@media screen and (max-width: 1365px) {
+	.section__welcome:before {
+		width: 50px;
+	}
 }
 
 .section__welcome .right h2 {
@@ -438,7 +451,7 @@ a.button-icon.inverted {
 	z-index: -1;
 	position: absolute;
 	top: -50px;
-	right: -10px;
+	right: -50px;
 	width: 200px;
 	height: 200px;
 	background-color: #b1e4e8;
@@ -451,7 +464,7 @@ a.button-icon.inverted {
 }
 
 .box-align-vertically {
-	padding-right: 50px;
+	/*padding-right: 50px;*/
 }
 
 .inverted .btn.outline, .button-icon.outline {
@@ -463,7 +476,7 @@ a.button-icon.inverted {
 }
 
 .section__ratings .swiper-button-next, .section__ratings .swiper-button-prev {
-	border-color: #00ffff;
+	border-color: #1A3C50;
 }
 
 .section__ratings .swiper-slide {
@@ -493,8 +506,42 @@ a.button-icon.inverted {
 	border-color: #b1e4e8;
 }
 
+.phone {
+	white-space: nowrap;
+}
+
 .menu-toggle {
 	top: 57px;
+}
+
+@media screen and (max-width: 767px) {
+	.header .header__content--column {
+		display: grid;
+	}
+	
+	.header .header__content--column div.mid,
+	.header .header__content--column div.right {
+		display: none;
+	}
+	
+	.menu-toggle {
+		top: 19px !important;
+	}
+	
+	.menu-toggle svg rect {
+		fill: #000;
+	}
+	
+	.header .logo img {
+		filter: invert(1) opacity(0.75) !important;
+		max-width: 80px  !important;
+		transform: scale(1) !important;
+		margin-top: 4px;
+	}
+	
+	.banner__logo {
+		display: none;
+	}
 }
 
 .section__banner--block .video-fg {
@@ -525,4 +572,160 @@ a.button-icon.inverted {
 
 .btn-wrap .btn {
 	font-weight: 700;
+}
+
+.menu-toggle.active svg rect:first-child {
+	transform: rotate(45deg) translateY(44%) translateX(4px);
+}
+
+.menu-toggle.active svg rect:last-child {
+	transform: rotate(-45deg) translateY(15%);
+	width: 40px;
+}
+
+.section__ratings-grid {
+	display: flex;
+	align-items: center;
+}
+
+.section__ratings-grid .section__ratings--nav {
+	position: relative;
+}
+
+@media screen and (min-width: 768px) {
+	body .main {
+		overflow: hidden;
+		overflow-y: auto;
+	}
+}
+
+.section__insurance .grid {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.section:not(.section__ratings) .grid,
+.section:not(.section__ratings) [class*=" grid-"],
+.section:not(.section__ratings) [class^=grid-] {
+	width: auto;
+	max-width: 100%;
+}
+
+.section__explore .grid {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.section__ratings .grid {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+@media screen and (max-width: 1279px) {
+	.main-navigation__nav>li>a {
+		font-size: 24px;
+	}
+}
+
+.section__insurance [class*="grid-"] > div:nth-of-type(1) {
+	padding-right: 50px;
+}
+
+@media screen and (max-width: 1279px) {
+	.section__ratings .swiper-slide {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.section__welcome:before {
+		display: none;
+	}
+	
+	.section__welcome .right h2 {
+		white-space: normal;
+	}
+	
+	.section__dental-link {
+		margin-top: 100px;
+	}
+	
+	.section__ratings .left {
+		display: none;
+	}
+}
+
+.section__features [class*="grid-"] {
+	align-items: center;
+}
+
+.section__features .padding-default {
+	padding-top: 50px !important;
+	padding-bottom: 50px !important;
+}
+
+@media screen and (max-width: 767px) {
+	body .main {
+		overflow: hidden;
+		overflow-y: auto;
+	}
+	
+	.section .grid {
+		display: flex;
+	}
+	.section .grid .grid-2-col-3-8 {
+		display: flex;
+		max-width: 100% !important;
+		gap: unset;
+	}
+	
+	.section__ratings .right {
+		width: 100%;
+	}
+	
+	.section__ratings .right .grid {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.section__ratings .section__ratings--nav {
+		margin-top: 50px;
+	}
+	
+	.section__dental .grid {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.section__welcome .grid {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.section__welcome .right h2 {
+		font-size: 3rem;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.section__insurance .grid,
+	.section__insurance .grid .grid-2-col-3-8 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.section__insurance [class*="grid-"] > div:nth-of-type(1) {
+		padding-right: 0;
+		padding-bottom: 50px;
+	}
+	
+	.section__dental .grid-3-col {
+		row-gap: 100px;
+	}
+	
+	.section__explore .left {
+		padding-bottom: 50px;
+	}
 }
