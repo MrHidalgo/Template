@@ -109,8 +109,8 @@
 	color: #000000;
 }
 
-.scrolled .menu-toggle svg rect, .inverted-header .menu-toggle svg rect {
-	fill: #000000;
+.scrolled .menu-toggle svg rect {
+	fill: #000;
 }
 
 .btn.outline {
@@ -367,10 +367,36 @@ a.button-icon.inverted {
 }
 
 .section__dental-link a {
+	position: relative;
 	display: flex;
 	text-transform: uppercase;
 	color: #232f3f;
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+}
+
+.section__dental-link a:before,
+.section__dental-link a:after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	width: 50%;
+	height: 2px;
+	background-color: #232f3f;
+	transition: all 0.3s ease;
+}
+
+.section__dental-link a:before {
+	left: 0;
+}
+.section__dental-link a:after {
+	right: 0;
+}
+
+.section__dental-link a:hover:before {
+	width: 0;
+}
+.section__dental-link a:hover:after {
+	width: 0;
 }
 
 .section__blocks h2 {
@@ -446,8 +472,7 @@ a.button-icon.inverted {
 	max-height: 750px;
 }
 
-.section__about-visual:before {
-	content: '';
+.section__about-visual span {
 	z-index: -1;
 	position: absolute;
 	top: -50px;
@@ -479,6 +504,17 @@ a.button-icon.inverted {
 	border-color: #1A3C50;
 }
 
+.section__ratings .swiper-button-next:hover, 
+.section__ratings .swiper-button-prev:hover {
+	background-color: #1A3C50;
+	transition: all 0.3s ease;
+}
+
+.section__ratings .swiper-button-next:hover img,
+.section__ratings .swiper-button-prev:hover img {
+	filter: invert(1);
+}
+
 .section__ratings .swiper-slide {
 	font-family: "dovetail-mvb";
 	font-weight: 300;
@@ -504,6 +540,11 @@ a.button-icon.inverted {
 .header .header__content--column div.right ul li a {
 	background-color: transparent;
 	border-color: #b1e4e8;
+}
+
+.header .header__content--column div.right ul li a:hover {
+	background-color: #b1e4e8;
+	color: #415556 !important;
 }
 
 .phone {
@@ -727,5 +768,28 @@ a.button-icon.inverted {
 	
 	.section__explore .left {
 		padding-bottom: 50px;
+	}
+}
+
+.menu-toggle.active svg rect {
+	fill: #fff;
+}
+
+.main-navigation__nav>li>a {
+	font-family: 'proxima-nova', sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+	.menu-mobile-cta ul a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: .5rem;
+	}
+	
+	.menu-mobile-cta ul a svg {
+		margin-top: 3px;
+		margin-bottom: 5px;
 	}
 }
