@@ -706,10 +706,6 @@ a.button-icon.inverted {
 }
 
 @media screen and (max-width: 767px) {
-	section {
-		overflow: hidden;
-	}
-	
 	body {
 		/*overflow: hidden;*/
 		/*overflow-y: auto;*/
@@ -796,4 +792,8 @@ a.button-icon.inverted {
 		margin-top: 3px;
 		margin-bottom: 5px;
 	}
+}
+
+section {
+	overflow: hidden;
 }
