@@ -706,9 +706,13 @@ a.button-icon.inverted {
 }
 
 @media screen and (max-width: 767px) {
-	body .main {
+	section {
 		overflow: hidden;
-		overflow-y: auto;
+	}
+	
+	body {
+		/*overflow: hidden;*/
+		/*overflow-y: auto;*/
 	}
 	
 	.section .grid {
