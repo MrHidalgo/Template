@@ -803,7 +803,7 @@ section {
 	transition: all 1.25s ease !important;
 }
 
-.section__dental .js-intersection-observed .section__dental-img {
+.section__dental .js-zoom .section__dental-img {
 	transform: scale(1);
 }
 
@@ -812,7 +812,7 @@ section {
 	transition: all 1.25s ease !important;
 }
 
-.section__about .js-intersection-observed.section__about-img {
+.section__about .js-zoom.section__about-img {
 	transform: scale(1);
 }
 
@@ -821,6 +821,6 @@ section {
 	transition: all 1.25s ease !important;
 }
 
-.section__features.js-intersection-observed .section__features-img {
+.section__features.js-zoom .section__features-img {
 	transform: scale(1);
 }
