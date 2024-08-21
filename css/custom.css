@@ -824,3 +824,9 @@ section {
 .section__features.js-zoom .section__features-img {
 	transform: scale(1);
 }
+
+@media screen and (max-width: 767px) {
+	.section__about-visual span.rellax {
+		display: none;
+	}
+}
