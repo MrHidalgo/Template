@@ -6,6 +6,8 @@ const observer = new IntersectionObserver((entries, observer) => {
         const index = Array.from(animations).indexOf(entry.target);
         if (entry.isIntersecting) {
             animations[index].classList.add(observedClass);
+        } else {
+            animations[index].classList.remove(observedClass);
         }
     })
 }, {
