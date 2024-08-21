@@ -797,3 +797,30 @@ a.button-icon.inverted {
 section {
 	overflow: hidden;
 }
+
+.section__dental .section__dental-img {
+	transform: scale(1.2);
+	transition: all 1.25s ease !important;
+}
+
+.section__dental .js-intersection-observed .section__dental-img {
+	transform: scale(1);
+}
+
+.section__about .section__about-img {
+	transform: scale(1.2);
+	transition: all 1.25s ease !important;
+}
+
+.section__about .js-intersection-observed.section__about-img {
+	transform: scale(1);
+}
+
+.section__features .section__features-img {
+	transform: scale(1.2);
+	transition: all 1.25s ease !important;
+}
+
+.section__features.js-intersection-observed .section__features-img {
+	transform: scale(1);
+}
